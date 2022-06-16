@@ -30,5 +30,19 @@ pub trait Summary {
 }
 
 fn main() {
-    println!("Hello, world!");
+    let tweet = Tweets {
+        username: String::from("@melitus"),
+        content: String::from("Hello, world!"),
+        reply: true,   
+        retweet: true, 
+    };
+
+    let new_articles  = NewArticles{
+        author: String::from("Sunday Aroh"),
+        content: String::from("Election is coming up in Nigeria!"),
+        headline: String::from("Election 2023"),    
+    };
+
+    print!("Tweets summary: {}\n", tweet.summary());
+    print!("Articles summary: {}", new_articles.summary());
 }
