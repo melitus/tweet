@@ -1,3 +1,5 @@
+use std::fmt::format;
+
 pub struct NewArticles { 
     pub author: String,
     pub content: String,
@@ -15,6 +17,12 @@ pub struct Tweets {
     pub content: String, 
     pub reply: bool,
     pub retweet: bool 
+}
+
+impl Summary for Tweets {
+    fn summary(&self) -> String {
+        format!("{} by {}", self.username, self.content)
+    }
 }
 
 pub trait Summary {
